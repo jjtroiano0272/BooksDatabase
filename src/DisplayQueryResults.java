@@ -1,3 +1,8 @@
+/*  TODO:
+			* Have startup window appear in center of screen.
+			*
+ */
+
 // Fig. 24.28: DisplayQueryResults.java
 // Display the contents of the Authors table in the books database.
 import java.awt.BorderLayout;
@@ -24,7 +29,7 @@ import javax.swing.table.TableModel;
 public class DisplayQueryResults extends JFrame 
 {
    // database URL, username and password
-   private static final String DATABASE_URL = "jdbc:derby:books";
+   private static final String DATABASE_URL = "jdbc:derby:lib\\books"; // Fixes error: "Database not found"
    private static final String USERNAME = "deitel";
    private static final String PASSWORD = "deitel";
    
@@ -154,10 +159,11 @@ public class DisplayQueryResults extends JFrame
          // dispose of window when user quits application (this overrides
          // the default of HIDE_ON_CLOSE)
          window.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-         window.setSize(500, 250); 
-         window.setVisible(true); 
-         
-         // ensure database is closed when user quits application
+         window.setSize(500, 750);
+         window.setVisible(true);
+	
+	
+	      // ensure database is closed when user quits application
          window.addWindowListener(
             new WindowAdapter() 
             {

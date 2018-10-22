@@ -2,7 +2,7 @@
 // Displaying the contents of the authors table.
 
 /*
-Lots of try catches workng with DB
+Lots of try catches working with DB
 Line comments are from MONDAY 22 OCT
  */
 import java.sql.Connection; // Est. the connection to the DB
@@ -16,9 +16,9 @@ public class DisplayAuthors
 {
    public static void main(String args[])
    {
-      final String DATABASE_URL = "jdbc:derby:books"; // Not gonna change, thus fina;
+      final String DATABASE_URL = "jdbc:derby:lib\\books"; // Not gonna change, thus fina;
       final String SELECT_QUERY = 
-         "SELECT authorID, firstName, lastName FROM authors"; // This is diretly SQL.
+         "SELECT authorID, firstName, lastName FROM authors"; // This is directly SQL.
 	   // Make sure table & field names match up
 
       // use try-with-resources to connect to and query the database
@@ -41,7 +41,7 @@ public class DisplayAuthors
 
          // display the names of the columns in the ResultSet
          for (int i = 1; i <= numberOfColumns; i++)
-            System.out.printf("%-8s\t", metaData.getColumnName(i)); // Fromats as left align, 8
+            System.out.printf("%-8s\t", metaData.getColumnName(i)); // Formats as left align, 8
 	      // spaces preceding. Authorname, firstname, lastname
          System.out.println();
          
