@@ -21,6 +21,9 @@ public class DisplayAuthors
          "SELECT authorID, firstName, lastName FROM authors"; // This is directly SQL.
 	   // Make sure table & field names match up
 
+	   /*
+	   * THIS TRY BLOCK IS SUPER FUCKING IMPORTANT!!! UNDERSTAND IT!
+	   * */
       // use try-with-resources to connect to and query the database
       try (  
          Connection connection = DriverManager.getConnection(
